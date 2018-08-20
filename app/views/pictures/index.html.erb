@@ -1,0 +1,26 @@
+<div class="tonari">
+<%= image_tag 'tonari.PNG' %>
+</div>
+
+<h1>新着一覧</h1>
+
+<div>
+  <%= link_to '我が家のご飯投稿', new_picture_path %>
+</div>
+<br>
+
+  <% @pictures.order(created_at: :desc).each do |picture| %>
+  <div>
+    <% user = User.find_by(id: picture.user_id) %>
+    <p><%= image_tag user.image_url(:thumb) if user.image_url(:thumb) %><%= user.name %></p>
+    <p><%= image_tag picture.image_url %></p>
+    <p><%= picture.content.truncate(12) %></p>
+      
+    <%= link_to '詳しく見る', picture, class: 'btn btn-success' %>
+    
+    <% if logged_in? && picture.user_id == current_user.id %>
+    <%= link_to '編集する', edit_picture_path(picture), class: 'btn btn-info' %>
+    <%= link_to '削除する', picture, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+    <% end %>
+  <% end %>
+  </div>

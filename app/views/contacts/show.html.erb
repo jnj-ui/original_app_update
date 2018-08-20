@@ -1,0 +1,21 @@
+<br>
+
+<p>
+  <strong>お名前:</strong>
+  <%= @contact.contact_name %>
+</p>
+
+<br>
+<p>
+  <strong>メニュー名:</strong>
+  <%= @contact.menu_name %>
+</p>
+
+<br>
+<p>
+  <strong>ご意見・ご要望:</strong>
+  <%= @contact.free %>
+</p>
+<br>
+
+<%= link_to 'お問い合わせ画面に戻る', new_contact_path %>
