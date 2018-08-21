@@ -22,6 +22,6 @@ Rails.application.configure do
 
   config.active_record.dump_schema_after_migration = false
   
-  config.action_mailer.default_url_options = { host: 'hidden-ridge-37878' }
+  config.action_mailer.default_url_options = { host: 'intense-inlet-38096' }
   config.action_mailer.delivery_method = :letter_opener_web
 end
