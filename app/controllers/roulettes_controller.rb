@@ -17,5 +17,8 @@ class RoulettesController < ApplicationController
       @side = side.sample
       @soup = soup.sample
   end
+  
+  def edit
+  end
 
 end
